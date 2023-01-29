@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="shaow">
+
+    </div>
+    <button>提交</button>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        background-color: #999;
+    }
+    .shaow{
+        width: 50px;
+        height: 50px;
+        background-color: aqua;
+        box-shadow: 60px 0px 0px #333,120px 0px 0px #333,180px 0px 0px #333;
+    }
+    button{
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        border: 1px red solid;
+    }
+    button::after{
+        content:"";
+        width: 2px;
+        height: 2px;
+        display: inline-block;
+        box-shadow: 4px 0 0 currentColor,8px 0 0 currentColor,12px 0 0 currentColor;
+    }
+    
+</style>
