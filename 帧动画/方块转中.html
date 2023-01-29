@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方块旋转</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        background: #95a5a6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .father{
+        width: 300px;
+        height: 300px;
+        border: solid white 1px;
+    }
+    .son{
+        width: 50px;
+        height: 50px;
+        background: #e67e22;
+        /* 第三针如果没设置秒数按照第一个进行计算 */
+        /* 位置越往后权重越大，如果有相同属性，有限使用后面帧的属性 */
+        animation-name: translate,backgroud,radius;
+        animation-duration: 5s,5s,2s;
+        /* 动画实现次数 */
+        /* infinite  无线循环 */
+        animation-iteration-count: infinite;
+    }
+    /* 移动帧 */
+/* 0%和100%最终都会回归到原始位置，所以可以不写 */
+    @keyframes translate{
+        25%{
+            transform: translateX(250px);
+        }
+        50%{
+            transform: translate(250px,250px);
+            /* background: #e67e22;
+            border-radius: 0; */
+        }
+        75%{
+            transform: translateY(250px);
+        }
+        /* 当有共同属性的时候可以用逗号隔开进行同时应用 */
+        /* 25%,75%{
+            background:#16a085;
+            border-radius: 50%;
+        } */
+    }
+    /* 背景色帧 */
+    @keyframes backgroud{
+        25%{
+            background-color: #e67e22;
+        }
+        50%{
+            background: #16a085;
+        }
+        75%{
+            background: #95a5a6;
+        }
+    }
+    /* 圆角帧 */
+    @keyframes radius{
+        25%{
+            border-radius: 50%;
+        }
+        50%{
+            border-radius: 0%;
+        }
+        75%{
+            border-radius: 100%;
+        }
+    }
+</style>

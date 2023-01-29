@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微场景页面布局</title>
+</head>
+<body>
+    <header>徐惠婕</header>
+    <main>
+        <div>已审图纸：三级系统施工图管理--正式施工阶段图纸，取所有有批注的图纸数；
+            会审文件：三级系统施工图管理--正式施工阶段图纸，取所有上传的会审文件；
+            审图意见：三级系统施工图管理--正式施工阶段图纸，取所有批注的数量；</div>
+        <div>
+            表头：分经理部、名称、审图意见、审图人、审图时间、问题定位
+表头字段与  三级系统施工图管理--正式施工阶段图纸--预览  中字段对应，问题定位为上传的问题截图，弹窗内点击图片可预览；
+        </div>
+    </main>
+    <footer>
+        xuhuijie.com
+    </footer>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;    
+    } 
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 10vh 1fr 10vh;
+    }
+    header{
+        text-align: center;
+        line-height: 10vh;
+        color: white;
+        background:#cf6a87;
+        transform: translateX(-300px);
+        animation-name: headerto;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+    }
+    main{
+        color: white;
+        background: #f7d794;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div:nth-child(1){
+        padding: 10px;
+        width: 80%;
+        line-height: 24px;
+        background:#63cdda ;
+        border-radius: 10px;
+        opacity: 0;
+        animation-name: mainto;
+        animation-duration: 3s;
+        animation-delay: 5s;
+        animation-fill-mode: forwards;
+
+    }
+    div:nth-child(2){
+        padding: 10px;
+        width: 80%;
+        opacity: 0;
+        line-height: 24px;
+        margin-top: 10px;
+        background: #f78fb3;
+        border-radius: 10px;
+        animation-name: mainto;
+        animation-duration: 3s;
+        animation-delay: 8s;
+        animation-fill-mode: forwards;
+    }
+    footer{
+        text-align: center;
+        color: white;
+        line-height: 10vh;
+        opacity: 0;
+        background: #cf6a87;
+        animation-name: bottom;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+    @keyframes headerto{
+        form{
+            transform: translateX(-300px);
+        }
+        to{
+            transform: translateX(0px);
+        }
+    }
+    @keyframes mainto {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    @keyframes bottom{
+        to{
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+    }
+</style>

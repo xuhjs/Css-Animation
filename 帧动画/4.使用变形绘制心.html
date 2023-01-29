@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用变形绘制心</title>
+</head>
+<body>
+    <div class="hert"></div>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#34495e;
+    }
+    .hert{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transform: rotate(45deg);
+        animation-name: hd;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        /* 动画执行的方向  normal正常从0到100 到下一次迅速回到0*/
+        /* reverse 动画执行方向反方向 从100 到 0 到下一次迅速回到100 */
+        /* alternate 动画效果从0到100慢慢走 不会有迅速回复的时候 */
+        /* alternate-reverse 从100回到0也是慢慢走  */
+        animation-direction: normal;
+    }
+    .hert::before{
+        content: '';
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: red;
+        position:absolute;
+        transform: translateX(-100px);
+    }
+    .hert::after{
+        content: '';
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: red;
+        position:absolute;
+        transform: translateY(-100px);
+    }
+    @keyframes hd{
+        25%{
+            transform:rotate(45deg) scale(0.5);
+        }
+        50%{
+            transform:rotate(45deg) scale(1);
+        }
+        75%{
+            transform:rotate(45deg) scale(0.5);
+        }
+        85%{
+            transform:rotate(45deg) scale(0.3);
+        }
+        95%{
+            transform:rotate(45deg) scale(0.8);
+        }
+        100%{
+            transform:rotate(45deg) scale(1);
+        }
+        
+    }
+
+
+</style>

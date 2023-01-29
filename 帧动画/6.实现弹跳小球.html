@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现弹跳小球的效果</title>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <section></section>
+</body>
+</html>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        background-color: #34495e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div{
+        width: 50px;
+        height: 50px;
+        background:radial-gradient(at center,#e67e22,#d35400);
+        border-radius: 100%;
+        animation-name: ball;
+        animation-duration: 2s;
+        /* 执行次数  一直循环 */
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    section{
+        width: 80px;
+        height: 30px;
+        background-color: #2f3640;
+        margin-top: 50px;
+        z-index: -1;
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(5px);
+        opacity: 1;
+        animation-name: section;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes section{
+        to{
+            opacity: 0;
+        }
+    }
+    @keyframes ball{
+        to{
+            transform: translateY(-300px);
+        }
+    }
+
+</style>
